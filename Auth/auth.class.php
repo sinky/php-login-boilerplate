@@ -34,10 +34,6 @@ class Auth {
     $this->cookieUsername = $this->config['auth_prefix']."_username";
     $this->cookieHash = $this->config['auth_prefix']."_hash";
 
-    if (version_compare(phpversion(), '5.5.0', '<')) {
-      require("password_hash.php");
-    }
-
     session_start();
     date_default_timezone_set($this->config['site_timezone']);
 
